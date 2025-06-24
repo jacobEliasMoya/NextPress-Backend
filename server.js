@@ -47,7 +47,8 @@ const server = http.createServer((req, res) => {
   }
 });
 
-// basically initiating the server to listen on the port and host
+// basically initiating the server to listen on the port and host/ no updates, but code updated 
+
 server.listen(port, hostname, () => {
   console.log(`Server is up and running on http://${hostname}:${port}/`);
 });
