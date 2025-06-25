@@ -3,7 +3,6 @@
 // 1 - handle a simple user creation method.
 
 const http = require("node:http"); // explicitly importing nodes v16+ node: to ensure that a core node module is being imported, no others / reduces any mis-imports
-const { json } = require("node:stream/consumers");
 
 const hostname = "127.0.0.1"; // settting localhost as the main host
 const port = 5000; // working on port 5000, using the 3000s on the frontend and other running applications
