@@ -3,15 +3,17 @@ const port = 5000;
 const host = "localhost";
 
 const server = http.createServer((req, res) => {
+  const { method, url } = req;
 
-  const {method,url} = req;
-
-  if(method.toLowerCase() === "post" && url.toLowerCase() === "http://localhost:5000/" ){
+  if (method.toLowerCase() === "post" && url === "/") {
     res.statusCode = 200;
-    res.setHeader("Content-Type","text/plain");
-    res.end("Looks to have sent some data")
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify({ message: "Looks to have some yummy data" }));
+  } else {
+    res.statusCode = 404;
+    res.setHeader("Content-Type", "text/plain");
+    res.end("Not Found");
   }
-
 });
 
 server.listen(port, host, () => {
